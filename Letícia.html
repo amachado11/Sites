@@ -1,234 +1,174 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Letícia Machado | Psicologia Feminina</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primaria: #E8B4B8;
-            --primaria-dark: #BC8F8F;
-            --bg-suave: #FAF3F3;
-            --texto: #4A4A4A;
-            --branco: #FFFFFF;
-        }
+  <meta charset="UTF-8">
+  <title>Psicóloga - Atendimento</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        * { box-sizing: border-box; transition: all 0.3s ease; }
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #FFFFFF;
+      color: #2E2E2E;
+    }
 
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-suave);
-            color: var(--texto);
-            overflow-x: hidden;
-        }
+    header {
+      background: #FAF3F3;
+      padding: 20px;
+      text-align: center;
+    }
 
-        /* Efeito de Fundo Decorativo */
-        body::before {
-            content: "";
-            position: fixed;
-            top: -10%; right: -10%;
-            width: 300px; height: 300px;
-            background: radial-gradient(circle, var(--primaria) 0%, transparent 70%);
-            opacity: 0.2;
-            z-index: -1;
-        }
+    header h1 {
+      margin: 0;
+      color: #E8B4B8;
+    }
 
-        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+    nav {
+      margin-top: 10px;
+    }
 
-        /* Header Minimalista */
-        header {
-            padding: 25px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #2E2E2E;
+      font-weight: bold;
+    }
 
-        .logo { 
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 24px; 
-            font-weight: bold; 
-            letter-spacing: 2px;
-            color: var(--primaria-dark);
-            text-decoration: none;
-        }
+    nav a:hover {
+      color: #E8B4B8;
+    }
 
-        /* Seção Hero (Impacto) */
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            padding: 40px 10%;
-            gap: 50px;
-        }
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background: #FAF3F3;
+    }
 
-        .hero-text { flex: 1.2; opacity: 0; transform: translateY(30px); }
-        .hero-image { flex: 0.8; position: relative; opacity: 0; transform: scale(0.9); }
+    .hero h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
 
-        .hero-text h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 0; line-height: 1.1; color: var(--primaria-dark); }
-        .hero-text p { font-size: 1.1rem; margin: 25px 0; color: #777; }
+    .hero p {
+      max-width: 600px;
+      margin: auto;
+    }
 
-        /* Moldura de Foto Moderna */
-        .foto-container {
-            width: 100%;
-            max-width: 350px;
-            aspect-ratio: 4/5;
-            background: var(--branco);
-            border-radius: 200px 200px 20px 20px;
-            padding: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            margin: 0 auto;
-        }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #E8B4B8;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
 
-        .foto-placeholder {
-            width: 100%; height: 100%;
-            background: linear-gradient(135deg, var(--bg-suave), var(--rosa-claro));
-            border-radius: 190px 190px 10px 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primaria-dark);
-            font-style: italic;
-        }
+    .btn:hover {
+      background: #D9989F;
+    }
 
-        /* Botão Premium */
-        .btn {
-            background: var(--primaria-dark);
-            color: white;
-            padding: 18px 35px;
-            text-decoration: none;
-            border-radius: 50px;
-            display: inline-block;
-            font-weight: 500;
-            letter-spacing: 1px;
-            box-shadow: 0 10px 20px rgba(188, 143, 143, 0.3);
-        }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
 
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(188, 143, 143, 0.5); }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-        /* Seção Sobre com Card */
-        .sobre-card {
-            background: var(--branco);
-            margin: 0 10%;
-            padding: 60px;
-            border-radius: 40px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.02);
-            text-align: center;
-        }
+    .card {
+      flex: 1;
+      min-width: 250px;
+      background: #FAF3F3;
+      padding: 20px;
+      border-radius: 10px;
+    }
 
-        /* Grid de Serviços Moderno */
-        .servicos { padding: 80px 10%; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+    .card h3 {
+      color: #E8B4B8;
+    }
 
-        .card {
-            background: rgba(255, 255, 255, 0.6);
-            padding: 40px;
-            border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.8);
-            backdrop-filter: blur(5px);
-        }
+    .about {
+      text-align: center;
+    }
 
-        .card:hover { background: var(--branco); border-color: var(--primaria); }
+    .contact {
+      text-align: center;
+    }
 
-        /* Rodapé */
-        footer { background: #333; color: #fff; padding: 60px 10% 20px; text-align: center; }
-
-        /* RESPONSIVIDADE (MOBILE) */
-        @media (max-width: 900px) {
-            .hero { flex-direction: column-reverse; text-align: center; padding-top: 20px; }
-            header { padding: 20px 5%; }
-            .sobre-card { margin: 0 5%; padding: 30px; }
-            .hero-text h1 { font-size: 2.2rem; }
-        }
-    </style>
+    footer {
+      background: #FAF3F3;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+  </style>
 </head>
+
 <body>
 
-    <header>
-        <a href="#" class="logo">L. MACHADO</a>
-        <nav style="display: none;" id="nav-mobile-placeholder"> </nav>
-    </header>
+<header>
+  <h1>Dra. Nome da Psicóloga</h1>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
 
-    <section class="hero">
-        <div class="hero-text" id="heroText">
-            <h1>Sua jornada para o equilíbrio começa aqui.</h1>
-            <p>Um espaço dedicado à saúde mental feminina, unindo acolhimento e profissionalismo em cada sessão.</p>
-            <a href="#" class="btn">Agendar Sessão</a>
-        </div>
-        <div class="hero-image" id="heroImg">
-            <div class="foto-container">
-                <div class="foto-placeholder">
-                    <span>Espaço para Foto Profissional</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="hero" id="inicio">
+  <h2>Cuidando da sua saúde emocional</h2>
+  <p>Atendimento psicológico com foco em acolhimento, empatia e desenvolvimento pessoal.</p>
+  <a href="#contato" class="btn">Agendar consulta</a>
+</section>
 
-    <div class="sobre-card">
-        <h2 style="font-size: 2.5rem; color: var(--primaria-dark);">O cuidado que você merece</h2>
-        <p style="max-width: 700px; margin: 20px auto; color: #666; font-size: 1.1rem;">
-            Me chamo <strong>Letícia Machado</strong> e meu objetivo é ajudar mulheres a encontrarem sua melhor versão através de uma escuta ética, sensível e transformadora.
-        </p>
+<section id="servicos">
+  <h2>Serviços</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Terapia Individual</h3>
+      <p>Atendimento personalizado para ajudar você a lidar com desafios emocionais.</p>
     </div>
 
-    <section class="servicos">
-        <h2>Especialidades</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Autoestima</h3>
-                <p>Reconstrua sua relação com você mesma.</p>
-            </div>
-            <div class="card">
-                <h3>Ansiedade</h3>
-                <p>Aprenda a lidar com as pressões do dia a dia.</p>
-            </div>
-            <div class="card">
-                <h3>Carreira</h3>
-                <p>Equilíbrio entre vida pessoal e profissional.</p>
-            </div>
-        </div>
-    </section>
+    <div class="card">
+      <h3>Ansiedade</h3>
+      <p>Tratamento focado em controle da ansiedade e melhora da qualidade de vida.</p>
+    </div>
 
-    <footer>
-        <p>📍 Porto Alegre | Online para o Mundo</p>
-        <p>WhatsApp: (51) 99999-9999</p>
-        <p style="font-size: 0.7rem; opacity: 0.5; margin-top: 30px;">© 2026 Letícia Machado - CRP 07/XXXXX</p>
-    </footer>
+    <div class="card">
+      <h3>Autoestima</h3>
+      <p>Desenvolva confiança e fortaleça sua relação consigo mesma.</p>
+    </div>
+  </div>
+</section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Animação de entrada suave
-            const heroText = document.getElementById('heroText');
-            const heroImg = document.getElementById('heroImg');
+<section class="about" id="sobre">
+  <h2>Sobre</h2>
+  <p>Psicóloga com experiência em atendimento clínico, dedicada a oferecer um espaço seguro e acolhedor para seus pacientes.</p>
+</section>
 
-            setTimeout(() => {
-                heroText.style.opacity = '1';
-                heroText.style.transform = 'translateY(0)';
-                
-                heroImg.style.opacity = '1';
-                heroImg.style.transform = 'scale(1)';
-            }, 300);
+<section class="contact" id="contato">
+  <h2>Contato</h2>
+  <p>Entre em contato para agendar sua consulta.</p>
+  <button class="btn" onclick="enviarMensagem()">Falar no WhatsApp</button>
+</section>
 
-            // Efeito simples de mudar o header ao rolar
-            window.addEventListener('scroll', () => {
-                const header = document.querySelector('header');
-                if (window.scrollY > 50) {
-                    header.style.padding = '15px 10%';
-                    header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.05)';
-                } else {
-                    header.style.padding = '25px 10%';
-                    header.style.boxShadow = 'none';
-                }
-            });
-        });
-    </script>
+<footer>
+  <p>© 2026 Psicóloga - Todos os direitos reservados</p>
+</footer>
+
+<script>
+  function enviarMensagem() {
+    alert("Aqui você pode integrar com WhatsApp futuramente!");
+  }
+</script>
+
 </body>
 </html>
