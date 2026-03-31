@@ -3,232 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psicóloga Letícia Machado | Acolhimento Feminino</title>
+    <title>Letícia Machado | Psicologia Feminina</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --fundo: #FAF3F3;
+            --primaria: #E8B4B8;
+            --primaria-dark: #BC8F8F;
+            --bg-suave: #FAF3F3;
+            --texto: #4A4A4A;
             --branco: #FFFFFF;
-            --rosa-blush: #E8B4B8;
-            --rosa-escuro: #BC8F8F;
-            --texto: #5D5D5D;
-            --detalhe: #F5C6CB;
         }
+
+        * { box-sizing: border-box; transition: all 0.3s ease; }
 
         body {
-            font-family: 'Poppins', sans-serif;
             margin: 0;
-            background-color: var(--fundo);
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-suave);
             color: var(--texto);
-            line-height: 1.6;
-            overflow-x: hidden; /* Evita rolagem lateral indesejada */
+            overflow-x: hidden;
         }
 
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--rosa-escuro);
+        /* Efeito de Fundo Decorativo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -10%; right: -10%;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, var(--primaria) 0%, transparent 70%);
+            opacity: 0.2;
+            z-index: -1;
         }
 
-        /* Menu Responsivo */
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+
+        /* Header Minimalista */
         header {
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 15px 5%;
+            padding: 25px 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        .logo {
-            font-size: 20px;
-            font-family: 'Playfair Display', serif;
-            font-weight: bold;
-            color: var(--rosa-escuro);
+        .logo { 
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px; 
+            font-weight: bold; 
+            letter-spacing: 2px;
+            color: var(--primaria-dark);
             text-decoration: none;
         }
 
-        nav a {
-            text-decoration: none;
-            color: var(--texto);
-            margin-left: 15px;
-            font-size: 13px;
-            text-transform: uppercase;
-        }
-
-        /* Banner Principal Responsivo */
+        /* Seção Hero (Impacto) */
         .hero {
-            padding: 60px 5%;
+            min-height: 80vh;
             display: flex;
-            flex-direction: row; /* Lado a lado no PC */
             align-items: center;
-            gap: 40px;
-            background: linear-gradient(to bottom, #ffffff, #FAF3F3);
+            padding: 40px 10%;
+            gap: 50px;
         }
 
-        .hero-content { flex: 1; }
-        
-        .hero-content h1 {
-            font-size: 38px;
-            margin-bottom: 20px;
-        }
+        .hero-text { flex: 1.2; opacity: 0; transform: translateY(30px); }
+        .hero-image { flex: 0.8; position: relative; opacity: 0; transform: scale(0.9); }
 
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
+        .hero-text h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 0; line-height: 1.1; color: var(--primaria-dark); }
+        .hero-text p { font-size: 1.1rem; margin: 25px 0; color: #777; }
 
-        .moldura-foto {
+        /* Moldura de Foto Moderna */
+        .foto-container {
             width: 100%;
-            max-width: 320px;
-            aspect-ratio: 3/4; /* Mantém a proporção */
-            background-color: var(--detalhe);
-            border-radius: 150px 150px 20px 20px;
+            max-width: 350px;
+            aspect-ratio: 4/5;
+            background: var(--branco);
+            border-radius: 200px 200px 20px 20px;
+            padding: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            margin: 0 auto;
+        }
+
+        .foto-placeholder {
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, var(--bg-suave), var(--rosa-claro));
+            border-radius: 190px 190px 10px 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 15px 15px 0px var(--rosa-blush);
+            color: var(--primaria-dark);
+            font-style: italic;
         }
 
-        /* Seções */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .servicos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .card-feminino {
-            background: white;
-            padding: 30px;
-            border-radius: 25px 5px;
-            border: 1px solid var(--detalhe);
-        }
-
-        .btn-agendar {
-            background-color: var(--rosa-escuro);
+        /* Botão Premium */
+        .btn {
+            background: var(--primaria-dark);
             color: white;
-            padding: 15px 30px;
+            padding: 18px 35px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
+            border-radius: 50px;
             display: inline-block;
-            margin-top: 20px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 20px rgba(188, 143, 143, 0.3);
         }
 
-        footer {
-            background-color: #4a4a4a;
-            color: white;
-            padding: 60px 5% 30px;
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(188, 143, 143, 0.5); }
+
+        /* Seção Sobre com Card */
+        .sobre-card {
+            background: var(--branco);
+            margin: 0 10%;
+            padding: 60px;
+            border-radius: 40px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.02);
             text-align: center;
         }
 
-        /* REGRAS PARA CELULAR (Telas menores que 768px) */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 10px;
-            }
+        /* Grid de Serviços Moderno */
+        .servicos { padding: 80px 10%; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
 
-            nav {
-                display: flex;
-                gap: 10px;
-            }
+        .card {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.8);
+            backdrop-filter: blur(5px);
+        }
 
-            nav a {
-                margin: 0;
-                font-size: 11px;
-            }
+        .card:hover { background: var(--branco); border-color: var(--primaria); }
 
-            .hero {
-                flex-direction: column-reverse; /* Foto em cima do texto no celular */
-                text-align: center;
-                padding: 40px 5%;
-            }
+        /* Rodapé */
+        footer { background: #333; color: #fff; padding: 60px 10% 20px; text-align: center; }
 
-            .hero-content h1 {
-                font-size: 32px;
-            }
-
-            .moldura-foto {
-                max-width: 250px;
-                box-shadow: 10px 10px 0px var(--rosa-blush);
-            }
+        /* RESPONSIVIDADE (MOBILE) */
+        @media (max-width: 900px) {
+            .hero { flex-direction: column-reverse; text-align: center; padding-top: 20px; }
+            header { padding: 20px 5%; }
+            .sobre-card { margin: 0 5%; padding: 30px; }
+            .hero-text h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo">LETÍCIA MACHADO</a>
-        <nav>
-            <a href="#sobre">Início</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#contato">Contato</a>
-        </nav>
+        <a href="#" class="logo">L. MACHADO</a>
+        <nav style="display: none;" id="nav-mobile-placeholder"> </nav>
     </header>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>Um refúgio para sua jornada.</h1>
-            <p>Psicoterapia com olhar sensível para o universo feminino. Vamos trilhar esse caminho juntas?</p>
-            <a href="#contato" class="btn-agendar">Agendar Minha Sessão</a>
+        <div class="hero-text" id="heroText">
+            <h1>Sua jornada para o equilíbrio começa aqui.</h1>
+            <p>Um espaço dedicado à saúde mental feminina, unindo acolhimento e profissionalismo em cada sessão.</p>
+            <a href="#" class="btn">Agendar Sessão</a>
         </div>
-        <div class="hero-image">
-            <div class="moldura-foto">
-                <span style="font-style: italic; color: white;">Sua Foto Aqui</span>
+        <div class="hero-image" id="heroImg">
+            <div class="foto-container">
+                <div class="foto-placeholder">
+                    <span>Espaço para Foto Profissional</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="sobre" class="container">
-        <h2>Acolhimento Feminino</h2>
-        <p style="font-size: 16px;">
-            Olá, sou a <strong>Letícia Machado</strong>. Através da psicologia, ajudo mulheres a resgatarem sua força interna, lidarem com a sobrecarga e construírem relações mais saudáveis consigo mesmas e com o mundo.
+    <div class="sobre-card">
+        <h2 style="font-size: 2.5rem; color: var(--primaria-dark);">O cuidado que você merece</h2>
+        <p style="max-width: 700px; margin: 20px auto; color: #666; font-size: 1.1rem;">
+            Me chamo <strong>Letícia Machado</strong> e meu objetivo é ajudar mulheres a encontrarem sua melhor versão através de uma escuta ética, sensível e transformadora.
         </p>
-    </section>
+    </div>
 
-    <section id="servicos" style="background-color: white;">
-        <div class="container">
-            <h2>Como podemos trabalhar</h2>
-            <div class="servicos-grid">
-                <div class="card-feminino">
-                    <h3>Autoestima</h3>
-                    <p>Redescubra seu valor e aprenda a ser sua melhor aliada.</p>
-                </div>
-                <div class="card-feminino">
-                    <h3>Ansiedade</h3>
-                    <p>Estratégias para acalmar a mente e viver o presente com leveza.</p>
-                </div>
-                <div class="card-feminino">
-                    <h3>Atendimento Online</h3>
-                    <p>O conforto do seu espaço seguro, de onde você estiver.</p>
-                </div>
+    <section class="servicos">
+        <h2>Especialidades</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Autoestima</h3>
+                <p>Reconstrua sua relação com você mesma.</p>
+            </div>
+            <div class="card">
+                <h3>Ansiedade</h3>
+                <p>Aprenda a lidar com as pressões do dia a dia.</p>
+            </div>
+            <div class="card">
+                <h3>Carreira</h3>
+                <p>Equilíbrio entre vida pessoal e profissional.</p>
             </div>
         </div>
     </section>
 
-    <footer id="contato">
-        <h3>Dê o primeiro passo</h3>
-        <p>Estou à disposição para conversarmos.</p>
-        <p><strong>WhatsApp:</strong> (51) 99999-9999</p>
-        <p>📍 Porto Alegre | Online</p>
-        <div style="margin-top: 40px; font-size: 11px; opacity: 0.6;">
-            CRP 07/XXXXX | © 2026 Letícia Machado
-        </div>
+    <footer>
+        <p>📍 Porto Alegre | Online para o Mundo</p>
+        <p>WhatsApp: (51) 99999-9999</p>
+        <p style="font-size: 0.7rem; opacity: 0.5; margin-top: 30px;">© 2026 Letícia Machado - CRP 07/XXXXX</p>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animação de entrada suave
+            const heroText = document.getElementById('heroText');
+            const heroImg = document.getElementById('heroImg');
+
+            setTimeout(() => {
+                heroText.style.opacity = '1';
+                heroText.style.transform = 'translateY(0)';
+                
+                heroImg.style.opacity = '1';
+                heroImg.style.transform = 'scale(1)';
+            }, 300);
+
+            // Efeito simples de mudar o header ao rolar
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.style.padding = '15px 10%';
+                    header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.05)';
+                } else {
+                    header.style.padding = '25px 10%';
+                    header.style.boxShadow = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
