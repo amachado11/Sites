@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psicóloga Letícia Machado | Acolhimento Feminino</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --fundo: #FAF3F3;
+            --branco: #FFFFFF;
+            --rosa-blush: #E8B4B8;
+            --rosa-escuro: #BC8F8F;
+            --texto: #5D5D5D;
+            --detalhe: #F5C6CB;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: var(--fundo);
+            color: var(--texto);
+            line-height: 1.8;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--rosa-escuro);
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            color: var(--rosa-escuro);
+            text-decoration: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--texto);
+            margin-left: 30px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Banner Principal */
+        .hero {
+            padding: 100px 8%;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            background: linear-gradient(to right, #ffffff, #FAF3F3);
+        }
+
+        .hero-content { flex: 1; }
+        
+        .hero-content h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .moldura-foto {
+            width: 380px;
+            height: 500px;
+            background-color: var(--detalhe);
+            border-radius: 150px 150px 0 0; /* Formato de arco - super feminino */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 20px 20px 0px var(--rosa-blush);
+            overflow: hidden;
+        }
+
+        /* Seções */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 90px 20px;
+            text-align: center;
+        }
+
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .card-feminino {
+            background: white;
+            padding: 40px;
+            border-radius: 30px 0px 30px 0px; /* Design diferenciado */
+            border: 1px solid var(--detalhe);
+            transition: 0.4s;
+        }
+
+        .card-feminino:hover {
+            background-color: var(--detalhe);
+            color: white;
+        }
+
+        .card-feminino h3 { color: inherit; }
+
+        .btn-agendar {
+            background-color: var(--rosa-escuro);
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 30px;
+            transition: 0.3s;
+        }
+
+        .btn-agendar:hover {
+            letter-spacing: 2px;
+            background-color: var(--rosa-blush);
+        }
+
+        footer {
+            background-color: #4a4a4a;
+            color: white;
+            padding: 80px 8% 20px;
+            text-align: center;
+        }
+
+        .whatsapp-link {
+            color: var(--rosa-blush);
+            font-size: 20px;
+            text-decoration: none;
+            display: block;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Letícia Machado</a>
+        <nav>
+            <a href="#sobre">A Profissional</a>
+            <a href="#servicos">Especialidades</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Um espaço seguro para ser quem você é.</h1>
+            <p>Psicoterapia com olhar sensível para as jornadas femininas. Agende um tempo para cuidar de você.</p>
+            <a href="#contato" class="btn-agendar">Iniciar Jornada</a>
+        </div>
+        <div class="hero-image">
+            <div class="moldura-foto">
+                <span style="font-style: italic;">[Foto da Letícia]</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="container">
+        <h2>Acolhimento & Ética</h2>
+        <p style="font-size: 18px; max-width: 800px; margin: 0 auto;">
+            Sou a <strong>Letícia Machado</strong>, psicóloga dedicada a apoiar mulheres em busca de equilíbrio emocional e autoconhecimento. Minha prática é pautada no respeito às suas vivências e na construção de um caminho de maior liberdade.
+        </p>
+    </section>
+
+    <section id="servicos" style="background-color: white; padding-bottom: 90px;">
+        <div class="container">
+            <h2>Especialidades</h2>
+            <div class="servicos-grid">
+                <div class="card-feminino">
+                    <h3>Autoconhecimento</h3>
+                    <p>Reconecte-se com sua essência e fortaleça sua autoestima no dia a dia.</p>
+                </div>
+                <div class="card-feminino">
+                    <h3>Sobrecarga & Stress</h3>
+                    <p>Ferramentas para lidar com as múltiplas jornadas e pressões sociais.</p>
+                </div>
+                <div class="card-feminino">
+                    <h3>Relações Saudáveis</h3>
+                    <p>Apoio na construção de limites e comunicações mais assertivas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <h3>Vamos conversar?</h3>
+        <p>Sinta-se à vontade para tirar dúvidas ou agendar sua primeira sessão.</p>
+        <a href="#" class="whatsapp-link">Clique aqui para falar pelo WhatsApp</a>
+        <p>📍 Porto Alegre | Online para todo o Brasil</p>
+        <p style="font-size: 12px; margin-top: 50px; opacity: 0.7;">CRP 07/XXXXX | © 2026 Letícia Machado</p>
+    </footer>
+
+</body>
+</html>
