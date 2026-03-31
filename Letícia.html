@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Psicóloga Letícia Machado | Acolhimento Feminino</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --fundo: #FAF3F3;
@@ -20,7 +22,8 @@
             margin: 0;
             background-color: var(--fundo);
             color: var(--texto);
-            line-height: 1.8;
+            line-height: 1.6;
+            overflow-x: hidden; /* Evita rolagem lateral indesejada */
         }
 
         h1, h2, h3 {
@@ -28,20 +31,21 @@
             color: var(--rosa-escuro);
         }
 
+        /* Menu Responsivo */
         header {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 20px 8%;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            backdrop-filter: blur(5px);
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 20px;
             font-family: 'Playfair Display', serif;
             font-weight: bold;
             color: var(--rosa-escuro);
@@ -51,166 +55,179 @@
         nav a {
             text-decoration: none;
             color: var(--texto);
-            margin-left: 30px;
-            font-size: 14px;
-            letter-spacing: 1px;
+            margin-left: 15px;
+            font-size: 13px;
             text-transform: uppercase;
         }
 
-        /* Banner Principal */
+        /* Banner Principal Responsivo */
         .hero {
-            padding: 100px 8%;
+            padding: 60px 5%;
             display: flex;
+            flex-direction: row; /* Lado a lado no PC */
             align-items: center;
-            gap: 60px;
-            background: linear-gradient(to right, #ffffff, #FAF3F3);
+            gap: 40px;
+            background: linear-gradient(to bottom, #ffffff, #FAF3F3);
         }
 
         .hero-content { flex: 1; }
         
         .hero-content h1 {
-            font-size: 52px;
+            font-size: 38px;
             margin-bottom: 20px;
-            line-height: 1.1;
         }
 
         .hero-image {
             flex: 1;
-            position: relative;
+            display: flex;
+            justify-content: center;
         }
 
         .moldura-foto {
-            width: 380px;
-            height: 500px;
+            width: 100%;
+            max-width: 320px;
+            aspect-ratio: 3/4; /* Mantém a proporção */
             background-color: var(--detalhe);
-            border-radius: 150px 150px 0 0; /* Formato de arco - super feminino */
+            border-radius: 150px 150px 20px 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 20px 20px 0px var(--rosa-blush);
-            overflow: hidden;
+            box-shadow: 15px 15px 0px var(--rosa-blush);
         }
 
         /* Seções */
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 90px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
 
         .servicos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .card-feminino {
             background: white;
-            padding: 40px;
-            border-radius: 30px 0px 30px 0px; /* Design diferenciado */
+            padding: 30px;
+            border-radius: 25px 5px;
             border: 1px solid var(--detalhe);
-            transition: 0.4s;
         }
-
-        .card-feminino:hover {
-            background-color: var(--detalhe);
-            color: white;
-        }
-
-        .card-feminino h3 { color: inherit; }
 
         .btn-agendar {
             background-color: var(--rosa-escuro);
             color: white;
-            padding: 18px 40px;
+            padding: 15px 30px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: 600;
             display: inline-block;
-            margin-top: 30px;
-            transition: 0.3s;
-        }
-
-        .btn-agendar:hover {
-            letter-spacing: 2px;
-            background-color: var(--rosa-blush);
+            margin-top: 20px;
         }
 
         footer {
             background-color: #4a4a4a;
             color: white;
-            padding: 80px 8% 20px;
+            padding: 60px 5% 30px;
             text-align: center;
         }
 
-        .whatsapp-link {
-            color: var(--rosa-blush);
-            font-size: 20px;
-            text-decoration: none;
-            display: block;
-            margin: 20px 0;
+        /* REGRAS PARA CELULAR (Telas menores que 768px) */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav {
+                display: flex;
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 0;
+                font-size: 11px;
+            }
+
+            .hero {
+                flex-direction: column-reverse; /* Foto em cima do texto no celular */
+                text-align: center;
+                padding: 40px 5%;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .moldura-foto {
+                max-width: 250px;
+                box-shadow: 10px 10px 0px var(--rosa-blush);
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo">Letícia Machado</a>
+        <a href="#" class="logo">LETÍCIA MACHADO</a>
         <nav>
-            <a href="#sobre">A Profissional</a>
-            <a href="#servicos">Especialidades</a>
+            <a href="#sobre">Início</a>
+            <a href="#servicos">Serviços</a>
             <a href="#contato">Contato</a>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Um espaço seguro para ser quem você é.</h1>
-            <p>Psicoterapia com olhar sensível para as jornadas femininas. Agende um tempo para cuidar de você.</p>
-            <a href="#contato" class="btn-agendar">Iniciar Jornada</a>
+            <h1>Um refúgio para sua jornada.</h1>
+            <p>Psicoterapia com olhar sensível para o universo feminino. Vamos trilhar esse caminho juntas?</p>
+            <a href="#contato" class="btn-agendar">Agendar Minha Sessão</a>
         </div>
         <div class="hero-image">
             <div class="moldura-foto">
-                <span style="font-style: italic;">[Foto da Letícia]</span>
+                <span style="font-style: italic; color: white;">Sua Foto Aqui</span>
             </div>
         </div>
     </section>
 
     <section id="sobre" class="container">
-        <h2>Acolhimento & Ética</h2>
-        <p style="font-size: 18px; max-width: 800px; margin: 0 auto;">
-            Sou a <strong>Letícia Machado</strong>, psicóloga dedicada a apoiar mulheres em busca de equilíbrio emocional e autoconhecimento. Minha prática é pautada no respeito às suas vivências e na construção de um caminho de maior liberdade.
+        <h2>Acolhimento Feminino</h2>
+        <p style="font-size: 16px;">
+            Olá, sou a <strong>Letícia Machado</strong>. Através da psicologia, ajudo mulheres a resgatarem sua força interna, lidarem com a sobrecarga e construírem relações mais saudáveis consigo mesmas e com o mundo.
         </p>
     </section>
 
-    <section id="servicos" style="background-color: white; padding-bottom: 90px;">
+    <section id="servicos" style="background-color: white;">
         <div class="container">
-            <h2>Especialidades</h2>
+            <h2>Como podemos trabalhar</h2>
             <div class="servicos-grid">
                 <div class="card-feminino">
-                    <h3>Autoconhecimento</h3>
-                    <p>Reconecte-se com sua essência e fortaleça sua autoestima no dia a dia.</p>
+                    <h3>Autoestima</h3>
+                    <p>Redescubra seu valor e aprenda a ser sua melhor aliada.</p>
                 </div>
                 <div class="card-feminino">
-                    <h3>Sobrecarga & Stress</h3>
-                    <p>Ferramentas para lidar com as múltiplas jornadas e pressões sociais.</p>
+                    <h3>Ansiedade</h3>
+                    <p>Estratégias para acalmar a mente e viver o presente com leveza.</p>
                 </div>
                 <div class="card-feminino">
-                    <h3>Relações Saudáveis</h3>
-                    <p>Apoio na construção de limites e comunicações mais assertivas.</p>
+                    <h3>Atendimento Online</h3>
+                    <p>O conforto do seu espaço seguro, de onde você estiver.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer id="contato">
-        <h3>Vamos conversar?</h3>
-        <p>Sinta-se à vontade para tirar dúvidas ou agendar sua primeira sessão.</p>
-        <a href="#" class="whatsapp-link">Clique aqui para falar pelo WhatsApp</a>
-        <p>📍 Porto Alegre | Online para todo o Brasil</p>
-        <p style="font-size: 12px; margin-top: 50px; opacity: 0.7;">CRP 07/XXXXX | © 2026 Letícia Machado</p>
+        <h3>Dê o primeiro passo</h3>
+        <p>Estou à disposição para conversarmos.</p>
+        <p><strong>WhatsApp:</strong> (51) 99999-9999</p>
+        <p>📍 Porto Alegre | Online</p>
+        <div style="margin-top: 40px; font-size: 11px; opacity: 0.6;">
+            CRP 07/XXXXX | © 2026 Letícia Machado
+        </div>
     </footer>
 
 </body>
